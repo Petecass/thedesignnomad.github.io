@@ -1,0 +1,108 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.container-fluid {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+/* Section tags */
+.section-tag {
+  text-align: center;
+
+  & span {
+    display: block;
+  }
+
+  >:nth-child(1) {
+    // font-family: ;
+    font-style: italic;
+  }
+
+  >:nth-child(2) {
+    // font-family: ;
+    text-transform: uppercase;
+  }
+
+}
+
+.section-tag__dark {
+  color: #333;
+}
+
+.section-tag__bright {
+  color: #fffefe;
+}
+
+/* Header section */
+.header-wrapper {
+  height: 70em;
+  background-image: url(../images/header-bg.jpg);
+  background-position: 50% 50%;
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.header {
+  height: 90%;
+  // padding-top: 5em;
+}
+
+.header--logo {
+  width: 100%;
+}
+
+/* Editorial section */
+.editorial-wrapper {
+  // padding: 5em 0;
+}
+
+/* Quote section */
+.quote-wrapper {
+  background: #333333;
+  color: #fff;
+}
+
+/* Working section */
+.working--task--image {
+  display: none;
+  & > img {
+    width: 100%;
+  }
+}
+
+.working--task--title {
+  clear: both;
+}
+
+/* Bio section */
+.bio--detailed {
+  color: #9ea8b2;
+  background: #202935;
+}
+
+/* Journey section */
+.journey-wrapper {
+  background: #e6ecf0;
+}
+
+/* Bucketlist section */
+.bucketlist-wrapper {
+  background: #000;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
