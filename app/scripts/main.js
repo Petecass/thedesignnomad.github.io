@@ -1,1 +1,1 @@
-console.log('\'Allo \'Allo!');
+$('.header-wrapper').height($(window).height()-100);

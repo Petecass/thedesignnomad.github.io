@@ -24,12 +24,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 
   >:nth-child(1) {
-    // font-family: ;
     font-style: italic;
+    font-family: $font-family-serif;
   }
 
   >:nth-child(2) {
-    // font-family: ;
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
   }
 
@@ -54,7 +56,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 .header {
   height: 90%;
-  // padding-top: 5em;
 }
 
 .header--logo {
@@ -63,18 +64,78 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* Editorial section */
 .editorial-wrapper {
-  // padding: 5em 0;
+}
+
+.editorial--header {
+  h3 {
+    margin-bottom: 2em;
+  }
+}
+
+.editorial--content {
+  p {
+    margin-bottom: 2em;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.editorial--social-links {
+  margin-top: 2em;
+  & a {
+    margin: 0 0.3em;
+    color: #cccccc;
+  }
+}
+
+.editorial--social-links {
+  & a:hover, & a:active   {
+      color: #999999;
+      cursor: pointer;
+    }
 }
 
 /* Quote section */
 .quote-wrapper {
-  background: #333333;
+  background: #242728;
   color: #fff;
 }
 
+.quote--divider {
+  margin: 2em auto;
+  width: 50px;
+  height: 5px;
+  background-color: #fff;
+  opacity: 0.2;
+}
+
+.quote--section-tag {
+  & span {
+    display: inline !important;
+  }
+}
+
 /* Working section */
+.working--stuff {
+  margin-top: 2em;
+}
+
+.working--task {
+  border: 1px solid rgba(88, 89, 103, 0.2);
+  position: relative;
+  width: 32%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .working--task--image {
-  display: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
   & > img {
     width: 100%;
   }
@@ -82,6 +143,21 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 .working--task--title {
   clear: both;
+}
+
+.working--task--info {
+  height: 30%;
+}
+
+.working--task--cta {
+  background: #dfdfdf;
+
+  & > a {
+    line-height: 3em;
+    display: block;
+    color: #999999;
+    text-decoration: none;
+  }
 }
 
 /* Bio section */
@@ -98,11 +174,4 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 /* Bucketlist section */
 .bucketlist-wrapper {
   background: #000;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
 }
