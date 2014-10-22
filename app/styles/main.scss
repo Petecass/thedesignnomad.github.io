@@ -15,7 +15,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding-bottom: 4em;
 }
 
-/* Section tags */
+
+
+
+
+/*------------------------------------*\
+    #SECTION-TAGS
+\*------------------------------------*/
+
 .section-tag {
   text-align: center;
 
@@ -37,15 +44,22 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 }
 
-.section-tag__dark {
+.section-tag--dark {
   color: #333;
 }
 
-.section-tag__bright {
+.section-tag--bright {
   color: #fffefe;
 }
 
-/* Header section */
+
+
+
+
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
 .header-wrapper {
   height: 70em;
   background-image: url(../images/header-bg.jpg);
@@ -58,21 +72,28 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   height: 90%;
 }
 
-.header--logo {
+.header__logo {
   width: 100%;
 }
 
-/* Editorial section */
+
+
+
+
+/*------------------------------------*\
+    #EDITORIAL
+\*------------------------------------*/
+
 .editorial-wrapper {
 }
 
-.editorial--header {
+.editorial__header {
   h3 {
     margin-bottom: 2em;
   }
 }
 
-.editorial--content {
+.editorial__content {
   p {
     margin-bottom: 2em;
   }
@@ -81,7 +102,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
-.editorial--social-links {
+.editorial__social-links {
   margin-top: 2em;
   & a {
     margin: 0 0.3em;
@@ -89,20 +110,27 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
-.editorial--social-links {
+.editorial__social-links {
   & a:hover, & a:active   {
       color: #999999;
       cursor: pointer;
     }
 }
 
-/* Quote section */
+
+
+
+
+/*------------------------------------*\
+    #QUOTE
+\*------------------------------------*/
+
 .quote-wrapper {
   background: #242728;
   color: #fff;
 }
 
-.quote--divider {
+.quote__divider {
   margin: 2em auto;
   width: 50px;
   height: 5px;
@@ -110,18 +138,25 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   opacity: 0.2;
 }
 
-.quote--section-tag {
+.quote__section-tag {
   & span {
     display: inline !important;
   }
 }
 
-/* Working section */
-.working--stuff {
+
+
+
+
+/*------------------------------------*\
+    #WORKING
+\*------------------------------------*/
+
+.working__stuff {
   margin-top: 2em;
 }
 
-.working--task {
+.working__task {
   border: 1px solid rgba(88, 89, 103, 0.2);
   position: relative;
   width: 32%;
@@ -133,7 +168,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
-.working--task--image {
+.working__task__image {
   margin-top: 1em;
   margin-bottom: 1em;
   & > img {
@@ -141,15 +176,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
-.working--task--title {
+.working__task__title {
   clear: both;
 }
 
-.working--task--info {
+.working__task__info {
   height: 30%;
 }
 
-.working--task--cta {
+.working__task__cta {
   background: #dfdfdf;
 
   & > a {
@@ -160,18 +195,49 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
-/* Bio section */
-.bio--detailed {
+
+
+
+
+/*------------------------------------*\
+    #BIO
+\*------------------------------------*/
+
+.bio-wrapper {
+  padding-top: 0;
+  padding-bottom: 0;
+  // height: 70em;
+  background-image: url(../images/bio-bg.png);
+  background-position: 50% 50%;
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.bio__text {
+  padding: 3em;
   color: #9ea8b2;
   background: #202935;
 }
 
-/* Journey section */
+
+
+
+
+/*------------------------------------*\
+    #JOURNEY
+\*------------------------------------*/
 .journey-wrapper {
   background: #e6ecf0;
 }
 
-/* Bucketlist section */
+
+
+
+
+/*------------------------------------*\
+    #BUCKETLIST
+\*------------------------------------*/
+
 .bucketlist-wrapper {
   background: #000;
 }
