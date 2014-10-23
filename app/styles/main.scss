@@ -80,6 +80,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   margin-top: 3em;
 }
 
+.footnote-stats__single {
+  float: left;
+  margin-left: 2em;
+}
+
 .footnote-stats__count {
   font-family: $font-family-serif;
   font-weight: bold;
@@ -203,18 +208,23 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 .working__stuff {
   margin-top: 2em;
+  display: block;
 }
 
 .working__task {
-  box-sizing: border-box;
   // border: 1px solid rgba(88, 89, 103, 0.2);
   position: relative;
-  // width: 30%; // TODO: Correct width for all breakpoints
+  // width: 30%;                      // TODO: Correct width for all breakpoints
   // margin-right: 2%;
-  margin-bottom: 5%;
+  margin-bottom: 3em;
 
-  &:last-child {
-    margin-right: 0;
+  // &:last-child {
+  //   margin-right: 0;
+  // }
+
+  @media screen and (min-width: $screen-xs) and (max-width: $screen-sm-min) {
+    width: 60%;
+    margin: 0 auto 3em;
   }
 }
 
@@ -233,7 +243,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 .working__task__info {
-  min-height: 10em;
+  @media screen and (min-width: $screen-sm-min) {
+    min-height: 10em;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    min-height: 8em;
+  }
 }
 
 .working__task__cta {
@@ -242,9 +257,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   color: #999;
   text-decoration: none;
 
-  &:hover, &:active {
+  padding: 0.8em 1.4em;
+
+
+  &:focus, &:link, &:hover, &:active {
     text-decoration: none;
-    color: #666;
+    color: #666 !important;         // TODO:  Fix `a:focus` specificity problem,
+                                    //        in order to drop `!important`.
   }
 }
 
