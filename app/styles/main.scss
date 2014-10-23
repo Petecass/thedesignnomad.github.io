@@ -26,7 +26,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .section-tag {
   text-align: center;
 
-  & span {
+  // TODO: Correct class names
+  & > span {
     display: block;
   }
 
@@ -48,8 +49,58 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   color: #333;
 }
 
-.section-tag--bright {
+.section-tag--light {
   color: #fffefe;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #SOCIAL-LINKS
+\*------------------------------------*/
+
+.social-links {
+  & a {
+    cursor: pointer;
+    margin: 0 0.3em;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #FOOTNOTE-STATS
+\*------------------------------------*/
+
+.footnote-stats {
+  margin-top: 3em;
+}
+
+.footnote-stats__count {
+  font-family: $font-family-serif;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1em;
+  text-align: center;
+
+  &--bucketlist {
+    color: #666;
+  }
+}
+
+.footnote-stats__label {
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+
+  &--bucketlist {
+    color: #999;
+  }
 }
 
 
@@ -105,7 +156,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .editorial__social-links {
   margin-top: 2em;
   & a {
-    margin: 0 0.3em;
     color: #cccccc;
   }
 }
@@ -113,7 +163,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .editorial__social-links {
   & a:hover, & a:active   {
       color: #999999;
-      cursor: pointer;
     }
 }
 
@@ -157,10 +206,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 .working__task {
-  border: 1px solid rgba(88, 89, 103, 0.2);
+  box-sizing: border-box;
+  // border: 1px solid rgba(88, 89, 103, 0.2);
   position: relative;
-  width: 32%;
-  margin-right: 2%;
+  // width: 30%; // TODO: Correct width for all breakpoints
+  // margin-right: 2%;
   margin-bottom: 5%;
 
   &:last-child {
@@ -171,6 +221,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .working__task__image {
   margin-top: 1em;
   margin-bottom: 1em;
+
+  // TODO: Correct class names
   & > img {
     width: 100%;
   }
@@ -181,17 +233,18 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 .working__task__info {
-  height: 30%;
+  min-height: 10em;
 }
 
 .working__task__cta {
   background: #dfdfdf;
+  line-height: 3em;
+  color: #999;
+  text-decoration: none;
 
-  & > a {
-    line-height: 3em;
-    display: block;
-    color: #999999;
+  &:hover, &:active {
     text-decoration: none;
+    color: #666;
   }
 }
 
@@ -206,17 +259,43 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .bio-wrapper {
   padding-top: 0;
   padding-bottom: 0;
-  // height: 70em;
   background-image: url(../images/bio-bg.png);
   background-position: 50% 50%;
   background-repeat: repeat-x;
   background-size: cover;
 }
 
-.bio__text {
-  padding: 3em;
+.bio__basics {
+  height: 100%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.bio__section-tag {
+  text-align: left;
+}
+
+.bio__title {
+  color: #fff;
+}
+
+.bio__social-links {
+  margin-top: 2em;
+  & a {
+    color: #fff;
+  }
+
+  & a:hover, & a:active   {
+    color: #999999;
+  }
+}
+
+
+.bio__details {
+  padding: 5em 3em;
   color: #9ea8b2;
   background: #202935;
+  background: rgba(32, 41, 53, 0.95);
 }
 
 
@@ -230,6 +309,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   background: #e6ecf0;
 }
 
+.journey__milestone__line {
+
+}
+
 
 
 
@@ -239,5 +322,95 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 \*------------------------------------*/
 
 .bucketlist-wrapper {
-  background: #000;
+  height: 45em;
+  background-image: url(../images/bucketlist-bg.jpg);
+  background-position: 50% 50%;
+  background-repeat: repeat-x;
+  background-size: cover;
 }
+
+
+.bucketlist__list {
+  margin-top: 5em;
+}
+
+.bucketlist__task {
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+  color: #fff;
+
+  & > p {
+    margin: 0;
+    padding: 0.5em 0 0 4em;
+  }
+}
+
+.bucketlist__progress {
+  width: 3em;
+  height: 3em;
+}
+
+.bucketlist__progress--complete {
+  background: rgba(24, 160, 88, 0.50);
+
+  // TODO: Correct class names
+  & > .fa {
+    padding: 1em;
+  }
+}
+
+.bucketlist__progress--incomplete {
+  background: rgba(0, 0, 0, 0.25);
+
+  // TODO: Correct class names
+  & > .fa {
+    padding: 1.1em;
+  }
+}
+
+
+/*------------------------------------*\
+    #CONTACT
+\*------------------------------------*/
+.contact-wrapper {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #fff;
+  background: rgba(255, 255, 255, .05);
+  // background: rgba(0, 0, 0, .7);
+}
+
+.contact__section-tag {
+  // TODO: Correct class names
+  & > span {
+    display: inline;
+  }
+
+  >:nth-child(2) {
+    font-size: 0.6em;
+  }
+}
+
+.contact__mail {
+  color: #666666;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.contact__social-links {
+  margin-top: .1em;
+  & a {
+    color: #666;
+  }
+
+  & a:hover, & a:active   {
+    color: #999;
+  }
+}
+
+

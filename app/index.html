@@ -27,11 +27,11 @@
     <![endif]-->
 
 
-      <div class="header-wrapper  container-fluid">
+      <div class="header-wrapper  container-fluid  js-header-wrapper">
         <div class="header  container  col-xl-6  col-xl-offset-3">
           <object type="image/svg+xml" data="images/logo.svg" class="header__logo  centered"></object>
         </div>
-        <div class="section-tag  section-tag--bright  header__section-tag  col-xl-4  col-xl-offset-4">
+        <div class="section-tag  section-tag--light  header__section-tag  col-xl-4  col-xl-offset-4">
           <span>Currently in</span>
           <span>Chicago, Illinois, USA</span>
         </div>
@@ -47,7 +47,7 @@
               <p>My bucketlist is ever expanding, and I try everyday to keep up. No complaints though; my insatiable wanderlust has me runnign around the world getting up to various (but thoroughly enjoyable) mischiefs - all the while funneling the insights from all I see and do into running my design studio, MELEWI with the help from my amazing team.</p>
               <p>The world is my office, and it's impossible not to be inspired when you've the freedom to find yourself the best vantage point.</p>
             </div>
-            <div class="editorial__social-links  col-sm-12">
+            <div class="social-links editorial__social-links  col-sm-12">
               <a href="http://instagram.com/thedesignnomad" target="_blank"><i class="fa  fa-instagram"> </i></a>
               <a href="https://twitter.com/thedesignnomad" target="_blank"><i class="fa  fa-twitter"> </i></a>
               <a href="http://sg.linkedin.com/in/thedesignnomad" target="_blank"><i class="fa  fa-linkedin"> </i></a>
@@ -164,7 +164,7 @@
           <h3>You only live once, <br> but if you live it right, once is enough.</h3>
           <div class="col-sm-12"><div class="quote__divider"></div></div>
           <div class="section-tag  section-tag__light  quote__section-tag  col-sm-12">
-            <span>by</span>&nbsp;&nbsp;
+            <span>by</span>&nbsp;&nbsp; <!-- TODO: Correct spacing with css-->
             <span>Mae West</span>
           </div>
         </div>
@@ -183,9 +183,7 @@
               </div>
               <h3 class="working__task__title">Melewi</h3>
               <p class="working__task__info">We are a travelling digital, UX & UI design studio working with passionate people from around the world.</p>
-              <div class="working__task__cta  col-xs-8  col-xs-offset-2">
-                <a href="http://www.melewi.net" target="_blank">Check us out</a>
-              </div>
+              <a class="working__task__cta  col-xs-8  col-xs-offset-2" href="http://www.melewi.net" target="_blank">Check us out</a>
             </div>
 
             <div class="working__task  col-sm-4">
@@ -194,9 +192,7 @@
               </div>
               <h3 class="working__task__title">7 Continents</h3>
               <p class="working__task__info">One of my goals is to visit all 7 continents before I turn 28. Three years left, and three continents to go!</p>
-              <div class="working__task__cta  col-xs-8  col-xs-offset-2">
-                <a href="#">Find me</a>
-              </div>
+              <a class="working__task__cta  col-xs-8  col-xs-offset-2" href="#">Find me</a>
             </div>
 
             <div class="working__task  col-sm-4">
@@ -205,9 +201,7 @@
               </div>
               <h3 class="working__task__title">WeInvest</h3>
               <p class="working__task__info">My team and I are WeInvest’s design partner - an exciting financial tech startup. I lead the design as the UX &amp; UI director.</p>
-              <div class="working__task__cta  col-xs-8  col-xs-offset-2">
-                <a href="http://www.weinvest.net" target="_blank">Check us out</a>
-              </div>
+              <a class="working__task__cta  col-xs-8  col-xs-offset-2" href="http://www.weinvest.net" target="_blank">Check us out</a>
             </div>
           </div>
         </div>
@@ -215,61 +209,109 @@
 
       <div class="bio-wrapper  container-fluid">
         <div class="bio  container">
-          <div class="  col-sm-6">
-            <div class="section-tag  section-tag--bright  bio__section-tag">
+          <div class="bio__basics  col-sm-6">
+            <div class="section-tag  section-tag--light  bio__section-tag">
               <span>Bio</span>
               <span>Melissa NG</span>
             </div>
             <div class="bio__title">
               <h3>Part-time nomad, part-time UX UI designer. Full time goofball.</h3>
             </div>
-            <div class="bio__social-links">
-              <div class="instagram">
-                <a href="#" title="">
-                  <span class="sr-only">instagram</span>
-                  <span class="fa  fa-instagram"></span>
-                </a>
-              </div>
-              <div class="twitter">
-                <a href="#" title="">
-                  <span class="sr-only">twitter</span>
-                  <span class="fa  fa-twitter"></span>
-                </a>
-              </div>
-              <div class="linkedin">
-                <a href="#" title="">
-                  <span class="sr-only">linked in</span>
-                  <span class="fa  fa-linkedin"></span>
-                </a>
-              </div>
+
+            <div class="social-links bio__social-links">
+              <a href="http://instagram.com/thedesignnomad" target="_blank"><i class="fa  fa-instagram"> </i></a>
+              <a href="https://twitter.com/thedesignnomad" target="_blank"><i class="fa  fa-twitter"> </i></a>
+              <a href="http://sg.linkedin.com/in/thedesignnomad" target="_blank"><i class="fa  fa-linkedin"> </i></a>
             </div>
+
           </div>
-          <div class="bio__text  col-sm-6  pull-right">
+          <div class="bio__details  col-sm-6  pull-right">
            <p>My name is Mel. I'm 24, and was born in Singapore, but if I can be annoying for a sec - I'd like to think of myself as a citizen of the world.</p>
            <p>My days are spent figuring out if I should read a business book, fire up Photoshop, read articles on design &amp; UX, or work on startups ideas. Or sniff out the nearest artisanal cafe - I can't grow a moustache, so this is how I hipster.</p>
           </div>
         </div>
       </div>
+
 <!-- [WIP]
+
       <div class="journey-wrapper  container-fluid">
         <div class="journey  container">
           <div class="section-tag  section-tag--dark  journey__section-tag">
             <span>Thus far</span>
             <span>The journey</span>
           </div>
-        </div>
-      </div>
+          <div class="journey__timeline col-sm-12">
+            <div class="journey__milestone">
+              <div class="journey__milestone__date">
 
-      <div class="bucketlist-wrapper  container-fluid">
-        <div class="bucketlist">
-          <div class="section-tag  section-tag--dark  bucketlist__section-tag">
-            <span>Before I die</span>
-            <span>Bucketlist</span>
+              </div>
+
+              <div class="journey__milestone__line">
+
+              </div>
+
+              <div class="journey__milestone__location">
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-[/WIP] -->
+      [WIP]-->
+
+      <div class="bucketlist-wrapper  container-fluid js-bucketlist-wrapper">
+        <div class="bucketlist  container">
+          <div class="section-tag  section-tag--light  bucketlist__section-tag  col-sm-3">
+            <span>Before I die</span>
+            <span>Bucketlist</span>
+          </div>
+          <div class="bucketlist__list  col-sm-6">
+            <div class="row  bucketlist__task">
+              <div class="bucketlist__progress  bucketlist__progress--complete  pull-left"><i class="fa  fa-check"> </i></div>
+                <p>See the Grand Canyon</p>
+            </div>
+            <div class="row  bucketlist__task">
+              <div class="bucketlist__progress  bucketlist__progress--complete  pull-left"><i class="fa  fa-check"> </i></div>
+                <p>Visit New York</p>
+            </div>
+            <div class="row  bucketlist__task">
+              <div class="bucketlist__progress  bucketlist__progress--incomplete  pull-left"><i class="fa  fa-ellipsis-h"> </i></div>
+                <p>Go skydiving</p>
+            </div>
+          </div>
+
+          <div class="col-sm-4  row  footnote-stats  pull-right">
+              <div class="col-xs-6">
+                <div class="footnote-stats__count footnote-stats__count--bucketlist">592</div>
+                <div class="footnote-stats__label footnote-stats__label--bucketlist">to do</div>
+              </div>
+              <div class="col-xs-6">
+                <div class="footnote-stats__count footnote-stats__count--bucketlist">123</div>
+                <div class="footnote-stats__label footnote-stats__label--bucketlist">done</div>
+              </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <div class="contact-wrapper  container-fluid js-contact-wrapper">
+        <div class="contact  container">
+            <div class="section-tag  section-tag--light  contact__section-tag col-sm-6 pull-left">
+              <span>Talk to me!</span>&nbsp;&nbsp; <!-- TODO: Correct spacing with css-->
+              <span><a class="contact__mail" href="mailto://hi@thedesignnomad.com">hi@thedesignnomad.com</a></span>
+            </div>
+
+            <div class="social-links contact__social-links pull-right">
+              <a href="http://instagram.com/thedesignnomad" target="_blank"><i class="fa  fa-instagram"> </i></a>
+              <a href="https://twitter.com/thedesignnomad" target="_blank"><i class="fa  fa-twitter"> </i></a>
+              <a href="http://sg.linkedin.com/in/thedesignnomad" target="_blank"><i class="fa  fa-linkedin"> </i></a>
+            </div>
+        </div>
+      </div>
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -299,8 +341,8 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
