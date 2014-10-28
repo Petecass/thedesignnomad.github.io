@@ -117,7 +117,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 \*------------------------------------*/
 
 .header-wrapper {
-  height: 70em;
+  // height: 70em;
+  height: 100vh;
   background-image: url(../images/header-bg.jpg);
   background-position: 50% 50%;
   background-repeat: repeat-x;
@@ -125,7 +126,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 .header {
-  height: 90%;
+  height: 95%;
 }
 
 .header__logo {
@@ -139,9 +140,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 /*------------------------------------*\
     #EDITORIAL
 \*------------------------------------*/
-
-.editorial-wrapper {
-}
 
 .editorial__header {
   h3 {
@@ -165,11 +163,107 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
-.editorial__social-links {
-  & a:hover, & a:active   {
-      color: #999999;
-    }
+  .editorial__social-links {
+    & a:hover, & a:active   {
+        color: #999999;
+      }
+  }
+
+
+
+
+
+/*------------------------------------*\
+    #INSTAGRAM
+\*------------------------------------*/
+
+.instagram-wrapper {
+  padding: 0;
+  background: rgba(0, 0, 0, 0.7);
 }
+
+  .instagram {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+    .instagram__link-container {
+      list-style-type: none;
+      float: left;
+      width: 50%;
+      cursor: pointer;
+
+      @media screen and (min-width: $screen-xs-min) {
+        width: 33.33333%
+      }
+
+      @media screen and (min-width: $screen-sm-min) {
+        width: 20%;
+      }
+
+      @media screen and (min-width: $screen-md-min) {
+        width: 16.66666%;
+      }
+
+      @media screen and (min-width: $screen-lg-min) {
+        width: 12.5%;
+      }
+
+      &:hover .instagram__curtain {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      &:hover .instagram__image {
+        filter: blur(1em);
+        transform: scale(1.1);
+      }
+    }
+
+        .instagram__figure {
+          position: relative;
+          overflow: hidden;
+        }
+
+          .instagram__image {
+            display: block;
+            height: auto;
+            width: 100%;
+            transition: all .4s linear;
+          }
+
+            .instagram__curtain {
+              opacity: 0;
+              position: absolute;
+              top:0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              display: table;
+              color: #999;
+              width: 100%;
+              height: 100%;
+              z-index: 0;
+              transition: all .4s linear;
+            }
+
+              .instagram__link {
+                display: table-cell;
+                position: relative;
+                vertical-align: middle;
+              }
+
+                .instagram__button {
+                  font-family: $font-family-serif;
+                  border: 0.2em solid;
+                  font-style: italic;
+                  padding: 0.5em 0.8em;
+
+                  & > .fa-instagram {
+                    margin-right: 0.6em;
+                  }
+                }
 
 
 

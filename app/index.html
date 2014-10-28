@@ -5,6 +5,10 @@
     <title>The Design Nomad</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic|Quattrocento+Sans:400,700' rel='stylesheet' type='text/css'>
+
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -12,8 +16,6 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic|Quattrocento+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href="styles/main.css" rel="stylesheet">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -55,109 +57,9 @@
         </div>
       </div>
 
-<!-- [WIP]
-
-      <div class="instagram">
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
-
-        <div class="instagram__block">
-          <div class="instagram__link">
-            <span>Instagram</span>
-          </div>
-          <div class="instagram__image">
-            <img src="http://lorempixel.com/100/100/" alt="#Above the clouds">
-          </div>
-        </div>
+      <div class="instagram-wrapper  container-fluid">
+          <ul id="js-instagram" class="instagram"></ul>
       </div>
-[/WIP] -->
 
       <div class="quote-wrapper  container-fluid">
         <div class="quote container  text-center  col-sm-6  col-sm-offset-3">
@@ -330,6 +232,7 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="bower_components/instafeed.js/instafeed.min.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
