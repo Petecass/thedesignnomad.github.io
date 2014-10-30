@@ -214,6 +214,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
       &:hover .instagram__curtain {
         opacity: 1;
         background: rgba(0, 0, 0, 0.3);
+        transition: all .1s linear .2s;
       }
 
       &:hover .instagram__image {
@@ -231,7 +232,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
             display: block;
             height: auto;
             width: 100%;
-            transition: all .4s linear;
+            transition: all .3s linear;
           }
 
             .instagram__curtain {
@@ -242,7 +243,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
               bottom: 0;
               left: 0;
               display: table;
-              color: #999;
+              color: #ccc;
               width: 100%;
               height: 100%;
               z-index: 0;
@@ -408,9 +409,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .bio__details {
   padding: 5em 3em;
   color: #9ea8b2;
-  background: #202935;
   background: rgba(32, 41, 53, 0.95);
 }
+// TODO: Check for background blur
+// http://lea.verou.me/more-css-secrets/#intro
 
 
 
