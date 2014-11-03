@@ -93,3 +93,36 @@ var $jsBucketlistWrapperPaddingBottom = parseInt($('.js-bucketlist-wrapper')
     .replace(/\D/g, ''));
 $('.js-bucketlist-wrapper')
     .css('padding-bottom', $jsBucketlistWrapperPaddingBottom + $contactWrapperHeight);
+
+
+
+// Setup sidebar behavior
+
+// On window load menu button is hidden so it doesn't overlap
+// with the 'Currently in..' div
+var didScroll, $menuToggle = $('.js-menu-toggle');
+
+$(window).scroll(function(event) {
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(window).scrollTop();
+    if (st > 85) {
+        $menuToggle.fadeIn('medium');
+    } else {
+        $menuToggle.fadeOut('fast');
+    }
+}
+
+$('.js-menu-toggle').click(function(e) {
+    e.preventDefault();
+    $('.wrapper').toggleClass('wrapper--toggled');
+});
