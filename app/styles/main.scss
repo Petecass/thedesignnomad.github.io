@@ -36,26 +36,25 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 
 
-.wrapper {
-    padding-left: 0;
-    // transition: all 0.3s ease;
-}
 
 .wrapper--toggled {
-    // padding-left: 230px;
 
   .sidebar {
-    width: 230px;
+    transform: translateX(0);
   }
 
   .main-content {
-    position: absolute;
-    margin-right: -230px;
+    transform: translateX(230px);
   }
 
   .menu-toggle {
-    left: 242px;
+    transform: translateX(230px);
   }
+}
+
+.main-content {
+  display: block;
+  transition: all 0.5s ease;
 }
 
 .sidebar__social-links {
@@ -79,26 +78,21 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 \*------------------------------------*/
 
 .sidebar {
+  width: 230px;
   z-index: 1000;
   position: fixed;
-  left: 230px;
-  width: 0;
   min-height: 100%;
-  margin-left: -230px;
+  transform: translateX(-230px);
   overflow-y: auto;
 
-  transition: all 0.25s ease;
+  transition: all 0.5s ease;
 
   font-size: 1.2em;
   background: #1d2020;
 
   & ul {
-    // position: absolute;
-    // top: 0;
-    // width: 230px;
     list-style: none;
     padding: 0;
-    // margin: 0;
   }
 
   & ul li {
@@ -128,38 +122,29 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .menu-toggle {
   width: 2.5em;
   height: 2.5em;
-  padding: 0.36em 0.8em;
+  line-height: 2.65em;
+  text-align: center;
+  margin: 0.5em;
   color: #fff;
   background: rgba(0, 0, 0, 0.75);
   font-size: 1.5em;
   border-radius: 50%;
   position: fixed;
-  bottom: 0.5em;
-  left: 0.5em;
+  bottom: 0;
+  left: 0;
   z-index: 1001;
-  display: none;
+  opacity: 0;
   cursor: pointer;
 
-  transition: all 0.25s ease;
+  transition: all 0.5s ease;
   &:hover,
   &:active,
   &:focus {
     color: #fff;
     background: rgba(0, 0, 0, 0.9);
   }
-
-  @media screen and (max-width: $screen-sm-min) {
-    display: block;
-  }
-
-
 }
 
-
-.main-content {
-  width: 100%;
-  // padding: 15px;
-}
 
 
 
@@ -251,7 +236,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 \*------------------------------------*/
 
 .header-wrapper {
-  // height: 70em;
   height: 100vh;
   background-image: url(../images/header-bg.jpg);
   background-position: 50% 50%;
@@ -260,13 +244,19 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 .header {
-  height: 95%;
+  height: 100%;
+  // position: relative;
 }
 
 .header__logo {
   width: 100%;
 }
 
+.header__section-tag {
+  position: relative;
+  bottom: 2em;
+  // width: 100%;
+}
 
 
 
@@ -482,15 +472,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 .working__task__cta {
   background: #dfdfdf;
-  line-height: 3em;
   color: #999;
   text-decoration: none;
-
+  line-height: 3em;
   padding: 0.8em 1.4em;
 
 
-  &:focus, &:link, &:hover, &:active {
+  &:focus, /*&:link,*/ &:hover, &:active {
     text-decoration: none;
+    background: #cacaca;
     color: #666 !important;         // TODO:  Fix `a:focus` specificity problem,
                                     //        in order to drop `!important`.
   }
@@ -563,20 +553,36 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   .journey {
     height: 10em;
     position: relative;
-  }
 
-  .journey__backline {
-    background: rgba(51, 51, 51, 0.1);
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: .4em;
+
+    background: rgba(55, 55, 55, .2);
+    display: block;
+
+    user-select: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 5em;
+      width: 100%;
+      height: .4em;
+      background: rgba(51, 51, 51, 0.1);
+    }
   }
 
   .journey__timeline {
     width: 100%;
     text-align: center;
     position: absolute;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 5em;
+      width: 100%;
+      height: .4em;
+      background: rgba(0, 0, 200, 0.4);
+    }
   }
 
     .journey__milestone {

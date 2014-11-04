@@ -116,9 +116,9 @@ setInterval(function() {
 function hasScrolled() {
     var st = $(window).scrollTop();
     if (st > 85) {
-        $menuToggle.fadeIn('medium');
+        $menuToggle.fadeTo(0, 1);
     } else {
-        $menuToggle.fadeOut('fast');
+        $menuToggle.fadeTo(0, 0);
     }
 }
 
