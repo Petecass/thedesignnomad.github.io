@@ -476,6 +476,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   text-decoration: none;
   line-height: 3em;
   padding: 0.8em 1.4em;
+  transition: all .25s ease;
 
 
   &:focus, /*&:link,*/ &:hover, &:active {
