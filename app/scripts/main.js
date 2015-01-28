@@ -1,4 +1,6 @@
 'use strict';
+/* global Instafeed */
+
 
 // Make .header-wrapper height equal to the viewport height
 // $('.js-header-wrapper').height($(window).height()-100);
@@ -103,15 +105,9 @@ $('.js-bucketlist-wrapper')
 var didScroll, $menuToggle = $('.js-menu-toggle');
 
 $(window).scroll(function(event) {
+    console.log(event);
     didScroll = true;
 });
-
-setInterval(function() {
-    if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-    }
-}, 250);
 
 function hasScrolled() {
     var st = $(window).scrollTop();
@@ -122,7 +118,33 @@ function hasScrolled() {
     }
 }
 
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+
 $('.js-menu-toggle').click(function(e) {
     e.preventDefault();
     $('.wrapper').toggleClass('wrapper--toggled');
+});
+
+
+
+// Smooth scroll to anchor click
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 900);
+        return false;
+      }
+    }
+  });
 });
