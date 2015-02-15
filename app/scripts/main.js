@@ -105,7 +105,6 @@ $('.js-bucketlist-wrapper')
 var didScroll, $menuToggle = $('.js-menu-toggle');
 
 $(window).scroll(function(event) {
-    console.log(event);
     didScroll = true;
 });
 
