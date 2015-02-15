@@ -286,7 +286,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .editorial__social-links {
   margin-top: 2em;
   & a {
+    margin: 0 7px;
     color: #cccccc;
+    transition: color 0.25s linear;
 
     &:hover,
     &:active {
