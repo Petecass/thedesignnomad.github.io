@@ -31,8 +31,9 @@ var imagesLimit = function() {
     if (windowWidth < 480) { return 6; }
     else if (windowWidth < 768) { return 9; }
     else if (windowWidth < 992) { return 10; }
-    else if (windowWidth < 1200) { return 12; }
-    else { return 16; }
+    // else if (windowWidth < 1200) { return 12; }
+    else { return 12; }
+    // else { return 16; }
 };
 
 // Create actual Instagram feed
@@ -104,7 +105,7 @@ $('.js-bucketlist-wrapper')
 // with the 'Currently in..' div
 var didScroll, $menuToggle = $('.js-menu-toggle');
 
-$(window).scroll(function(event) {
+$(window).scroll(function() {
     didScroll = true;
 });
 

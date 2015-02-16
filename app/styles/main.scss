@@ -335,9 +335,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
         width: 16.66666%;
       }
 
-      @media screen and (min-width: $screen-lg-min) {
-        width: 12.5%;
-      }
+      // @media screen and (min-width: $screen-lg-min) {
+      //   width: 12.5%;
+      // }
 
       &:hover .instagram__curtain {
         opacity: 1;
