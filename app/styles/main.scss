@@ -438,62 +438,62 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   display: block;
 }
 
-.working__task {
-  // border: 1px solid rgba(88, 89, 103, 0.2);
-  position: relative;
-  // width: 30%;                      // TODO: Correct width for all breakpoints
-  // margin-right: 2%;
-  margin-bottom: 3em;
+  .working__task {
+    box-shadow: inset 0 0 0 1px rgba(204, 204, 204, 0.3);
+    position: relative;
+    // width: 30%;                      // TODO: Correct width for all breakpoints
+    // margin-right: 2%;
+    margin-bottom: 3em;
 
-  // &:last-child {
-  //   margin-right: 0;
-  // }
+    // &:last-child {
+    //   margin-right: 0;
+    // }
 
-  @media screen and (min-width: $screen-xs) and (max-width: $screen-sm-min) {
-    width: 60%;
-    margin: 0 auto 3em;
+    @media screen and (min-width: $screen-xs) and (max-width: $screen-sm-min) {
+      width: 60%;
+      margin: 0 auto 3em;
+    }
   }
-}
 
-.working__task__image {
-  margin-top: 1em;
-  margin-bottom: 1em;
+    .working__task__image {
+      margin-top: 1em;
+      margin-bottom: 1em;
 
-  // TODO: Correct class names
-  & > img {
-    width: 100%;
-  }
-}
+      // TODO: Correct class names
+      & > img {
+        width: 100%;
+      }
+    }
 
-.working__task__title {
-  clear: both;
-}
+    .working__task__title {
+      clear: both;
+    }
 
-.working__task__info {
-  @media screen and (min-width: $screen-sm-min) {
-    min-height: 10em;
-  }
-  @media screen and (min-width: $screen-lg-min) {
-    min-height: 8em;
-  }
-}
+    .working__task__info {
+      @media screen and (min-width: $screen-sm-min) {
+        min-height: 10em;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        min-height: 8em;
+      }
+    }
 
-.working__task__cta {
-  background: #dfdfdf;
-  color: #999;
-  text-decoration: none;
-  line-height: 3em;
-  padding: 0.8em 1.4em;
-  transition: all 0.25s ease;
+    .working__task__cta {
+      background: #dfdfdf;
+      color: #999;
+      text-decoration: none;
+      line-height: 2.8em;
+      padding: 0.8em 1.4em;
+      transition: all 0.25s ease;
 
 
-  &:focus, /*&:link,*/ &:hover, &:active {
-    text-decoration: none;
-    background: #cacaca;
-    color: #666 !important;         // TODO:  Fix `a:focus` specificity problem,
-                                    //        in order to drop `!important`.
-  }
-}
+      &:focus, /*&:link,*/ &:hover, &:active {
+        text-decoration: none;
+        background: #cacaca;
+        color: #666 !important;         // TODO:  Fix `a:focus` specificity problem,
+                                        //        in order to drop `!important`.
+      }
+    }
 
 
 
