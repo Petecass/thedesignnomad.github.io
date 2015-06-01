@@ -243,9 +243,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   background-position: 50% 50%;
   background-repeat: repeat-x;
   background-size: cover;
-
-  transition: height 0.1s ease;
-
 }
 
 // .header-spacer {
@@ -256,7 +253,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 .header {
   padding-top: 5em;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.075s ease-out;
 }
 
 

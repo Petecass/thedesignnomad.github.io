@@ -242,12 +242,11 @@ var runOnScroll = function() {
 
   var headerTranslate = yPos / 10; //
   if (headerTranslate < 20) {
-    console.log(headerTranslate);
     header.style.transform = 'translateY(' + headerTranslate + '%)';
   }
 
 };
 
-var throttledScroll = throttle(runOnScroll, 100);
+var throttledScroll = throttle(runOnScroll, 75);
 
 window.addEventListener('scroll', throttledScroll);
