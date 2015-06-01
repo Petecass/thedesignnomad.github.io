@@ -176,15 +176,18 @@ $('.js-bucketlist-wrapper')
 
 // On window load menu button is hidden so it doesn't overlap
 // with the 'Currently in..' div
-var didScroll, $menuToggle = $('.js-menu-toggle');
+
+// TODO: Change the following to native js, leveraging the scroll
+var didScroll;
+var $menuToggle = $('.js-menu-toggle');
 
 $(window).scroll(function() {
     didScroll = true;
 });
 
 function hasScrolled() {
-    var st = $(window).scrollTop();
-    if (st > 85) {
+    var yPos = window.scrollY; // Measures the scroll distance from the top in px.
+    if (yPos > 85) {
         $menuToggle.fadeTo(0, 1);
     } else {
         $menuToggle.fadeTo(0, 0);
@@ -199,9 +202,19 @@ setInterval(function() {
 }, 250);
 
 
-$('.js-menu-toggle').click(function(e) {
-    e.preventDefault();
-    $('.wrapper').toggleClass('wrapper--toggled');
+$menuToggle.click(function(e) {
+  e.preventDefault();
+
+  // Change menu toggle icon
+  // TODO: Animate the change
+  var menuToggleBtn = this;
+  if(menuToggleBtn.innerHTML === '<i class="fa fa-bars"></i>') {
+    menuToggleBtn.innerHTML = '<i class="fa fa-close"></i>';
+  } else if (menuToggleBtn.innerHTML === '<i class="fa fa-close"></i>') {
+    menuToggleBtn.innerHTML = '<i class="fa fa-bars"></i>';
+  }
+
+  $('.wrapper').toggleClass('wrapper--toggled');
 });
 
 
