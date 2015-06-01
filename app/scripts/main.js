@@ -1,28 +1,99 @@
 'use strict';
 /* global Instafeed */
 
-
-// Make .header-wrapper height equal to the viewport height
-// $('.js-header-wrapper').height($(window).height()-100);
-
 // //  Set up instafeed
 
 // Add debounce function (from underscore.js) to avoid having a performance hit
 // http://davidwalsh.name/javascript-debounce-function
-function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-        var context = this, args = arguments;
-        var later = function() {
-            timeout = null;
-            if (!immediate) { func.apply(context, args); }
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) { func.apply(context, args); }
+
+  // Returns a function, that, as long as it continues to be invoked, will not
+  // be triggered. The function will be called after it stops being called for
+  // N milliseconds. If `immediate` is passed, trigger the function on the
+  // leading edge, instead of the trailing.
+  var debounce = function(func, wait, immediate) {
+    var timeout, args, context, timestamp, result;
+
+    var later = function() {
+      var last = Date.  now() - timestamp;
+
+      if (last < wait && last >= 0) {
+        timeout = setTimeout(later, wait - last);
+      } else {
+        timeout = null;
+        if (!immediate) {
+          result = func.apply(context, args);
+          if (!timeout) {
+            context = args = null;
+          }
+        }
+      }
     };
-}
+
+    return function() {
+      context = this;
+      args = arguments;
+      timestamp = Date. now();
+      var callNow = immediate && !timeout;
+      if (!timeout) {
+        timeout = setTimeout(later, wait);
+      }
+      if (callNow) {
+        result = func.apply(context, args);
+        context = args = null;
+      }
+
+      return result;
+    };
+  };
+
+
+
+
+  // Returns a function, that, when invoked, will only be triggered at most once
+  // during a given window of time. Normally, the throttled function will run
+  // as much as it can, without ever going more than once per `wait` duration;
+  // but if you'd like to disable the execution on the leading edge, pass
+  // `{leading: false}`. To disable execution on the trailing edge, ditto.
+  var throttle = function(func, wait, options) {
+    var context, args, result;
+    var timeout = null;
+    var previous = 0;
+    if (!options) {
+      options = {};
+    }
+    var later = function() {
+      previous = options.leading === false ? 0 : Date.  now();
+      timeout = null;
+      result = func.apply(context, args);
+      if (!timeout) {
+        context = args = null;
+      }
+    };
+    return function() {
+      var now = Date. now();
+      if (!previous && options.leading === false) {
+        previous = now;
+      }
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+      if (remaining <= 0 || remaining > wait) {
+        if (timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
+        result = func.apply(context, args);
+        if (!timeout) {
+          context = args = null;
+        }
+      } else if (!timeout && options.trailing !== false) {
+        timeout = setTimeout(later, remaining);
+      }
+      return result;
+    };
+  };
+
 
 // Request the appropriate amount of images from the Instagram API
 // according to device screen
@@ -99,6 +170,8 @@ $('.js-bucketlist-wrapper')
 
 
 
+
+
 // Setup sidebar behavior
 
 // On window load menu button is hidden so it doesn't overlap
@@ -148,3 +221,33 @@ $(function() {
     }
   });
 });
+
+
+
+
+
+// Faux-parallax header background on scroll
+// Currently it just moves the logo downwards on page scroll
+// TODO: Animate background, by shortening the header-wrapper height,
+// and because the bg img size is set to cover, the img will appear to move.
+//
+// Also test bg image blur on scroll
+
+// var headerWrapper = document.getElementsByClassName('js-header-wrapper')[0];
+// var headerSpacer = document.getElementsByClassName('js-header-spacer')[0];
+var header = document.getElementsByClassName('js-header')[0];
+
+var runOnScroll = function() {
+  var yPos = window.scrollY; // Measures the scroll distance from the top in px.
+
+  var headerTranslate = yPos / 10; //
+  if (headerTranslate < 20) {
+    console.log(headerTranslate);
+    header.style.transform = 'translateY(' + headerTranslate + '%)';
+  }
+
+};
+
+var throttledScroll = throttle(runOnScroll, 100);
+
+window.addEventListener('scroll', throttledScroll);
