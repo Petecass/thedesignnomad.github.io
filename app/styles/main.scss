@@ -532,8 +532,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
   .bio {
-    margin-right: 0;
-    padding-right: 0;
     position: relative;
   }
 
@@ -566,11 +564,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     }
 
 
-    .bio__details {
-      padding: 5em 3em;
-      color: #9ea8b2;
-      background: rgba(32, 41, 53, 0.95);
-    }
+  .bio__details {
+    padding: 7em 6em;
+    color: #9ea8b2;
+    background: rgba(32, 41, 53, 0.95);
+  }
     // TODO: Check for background blur
     // http://lea.verou.me/more-css-secrets/#intro
 
